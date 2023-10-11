@@ -1,9 +1,10 @@
 from flask import Blueprint, Flask, render_template, request, redirect, url_for, jsonify
 import hashlib
-authorize_bp = Blueprint('auth', __name__)
+from pymongo import MongoClient
+authorize_bp = Blueprint('authorize', __name__)
 # #https://scribblinganything.tistory.com/178
 
-user = []
+users = []
 
 class User :
     def __init__(self, name, id, password):
@@ -12,22 +13,65 @@ class User :
         self.password = password
         self.selected_location = None
 
-@authorize_bp.route('auth/login', methods = ['GET', 'POST'])
-def login():
+    def select_rest(self,location_name):
+        self.selected_location = location_name
+
+    def to_form(self):
+        return {
+            'name': self.name,
+            'id' : self.id,
+            'password': self.password,
+        }
     
 
-@authorize_bp.route('auth/register', methods = ['GET', 'POST'])
+@authorize_bp.route('/login', methods = ['GET', 'POST'])
+def login():
+    if request.method == 'POST' :
+        id_receive = id.form['id_give']
+        password_receive = request.form['password_give']
+
+        user = next((u for u in users if u.id == id_receive and u.password == password_receive), None)
+
+        if user :
+            response = redirect(url_for('locations.select_location'))
+            response.set_cookie('id', id_receive)
+            return response
+
+
+    return render_template('login.html')
+
+@authorize_bp.route('/register', methods = ['POST'])
 # https://thalals.tistory.com/166
 def register():
+ 
     name_receive = request.form['name_give']
-    id_receive = id.form['username_give']
+    id_receive = id.form['id_give']
     password_receive = request.form['password_give']
 
-    password_hash = hashlib.she256(password_receive.encode('utf-8')).hexdigest()
+    
 
-    db.user.insert_one{'id': id_receive, 'pw' : password_hash , 'name' : name_receive}
 
-    return jsonify({'result': 'success'})
+    user = User(name_receive, id_receive, password_receive)
+    users.append(user)
+
+
+
+
+    return jsonify(message="User registered successfully"), 201
+
+def get_login_user_info():
+    id = request.cookies.get('id')
+    user = next((u for u in users if u.id == id), None)
+    return user
+
+
+
+
+
+
+
+if __name__ == '__main__':  
+   app.run('0.0.0.0',port=5000, debug=True)
 
 
 
