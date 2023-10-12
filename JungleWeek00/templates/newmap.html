@@ -10,6 +10,8 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
     <style>
         body {
             margin: 0;
@@ -43,27 +45,50 @@
         .image-button:nth-child(3) { top: 20px; left: 180px; }
         .image-button:nth-child(4) { top: 20px; left: 260px; }
         .image-button:nth-child(5) { top: 20px; left: 340px; }
+        
+        
+        .map-btn {
+            position: absolute;
+            /* 추가 */
+            font-size:large;
+            background-color: rgb(111, 214, 26);
+            border: 2px solid rgb(3, 27, 9);
+            border-radius: 50%;
+            color: rgb(7, 32, 16);
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+    
     </style>
 </head>
 
 <body>
+
+
+
+
+
+
+    
     <div class="one">
         <form method="GET" action="/info/1">
-            <button type="submit" class="info-button">1</button>
+            <button type="submit" class="map-btn" data-id="1" style="top:82%; left:10%;">1</button>
         </form>
         <form method="GET" action="/info/2">
-            <button type="submit" class="info-button">2</button>
+            <button type="submit" class="map-btn" data-id="2" style="top:59%; left:65%;">2</button>
         </form>
         <form method="GET" action="/info/3">
-            <button type="submit" class="info-button">3</button>
+            <button type="submit" class=" map-btn" data-id="3" style="top:41%; left:59%;">3</button>
             
         </form>
         <form method="GET" action="/info/4">
-            <button type="submit" class="info-button">4</button>
+            <button type="submit" class="map-btn" data-id="4" style="top:8%; left:55%;">4</button>
             
         </form>
         <form method="GET" action="/info/5">
-            <button type="submit" class="info-button">5</button>
+            <button type="submit" class="map-btn" data-id="5" style="top:23%; left:80%;">5</button>
             
         </form>
     </div>

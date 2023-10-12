@@ -1,39 +1,63 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-image: url('/static/map.jpg');
-            background-size: 100% 100%;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            background-position: center;
-            height: 100vh;
-            position: relative;
-        }
-
-        .dot {
-            width: 30px;
-            height: 30px;
-            background-color: red;
-            border-radius: 50%;
-            position: absolute;
-            cursor: pointer;
-            top: 10%;
-            left: 15%;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모바일 템플릿</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 
 </head>
 
 <body>
-    <form method="GET" action="/login">
-        <button type="submit" class="dot-button">GUEST</button>
-    </form>
+
+    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+                <span class="icon">
+                    <i class="fas fa-utensils"></i>
+                </span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item">
+
+                </a>
+                <a class="navbar-item">
+
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+<!--  button action  -->
+    <section class="section">
+        <div class="container">
+            <h1 class="title">밥글러</h1>
+            <div class="has-text-centered">
+                <form method="GET" action="/login">
+                    <button type="submit" class="button is-primary is-medium">밥먹을 사람?</button>
+                </form>
+            </div>
+        </div>
+    </section>
     <!-- 위치 조정하기 -->
+
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                &copy; 크래프톤 3기 블루팀 101호 1조
+            </p>
+        </div>
+    </footer>
 </body>
 
 </html>

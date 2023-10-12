@@ -146,6 +146,9 @@ def join(locations_id):
     # info.html로 리디렉션
     return redirect('/info/{}'.format(locations_id))
 
+@app.route('/map',  methods=['GET'])
+def map():
+    return render_template('newmap.html')
 
 
 if __name__ == '__main__':

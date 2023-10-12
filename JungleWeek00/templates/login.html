@@ -1,4 +1,4 @@
-{% with messages = get_flashed_messages() %}
+<!-- {% with messages = get_flashed_messages() %}
 {% if messages %}
 <script>
     alert("{{messages[-1]}}");
@@ -25,7 +25,7 @@
             color: #333;
         }
 
-        .container {
+        /* .container {
             max-width: 400px;
             margin: 0 auto;
             background-color: #fff;
@@ -33,7 +33,7 @@
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+        } */
 
         label {
             display: block;
@@ -42,7 +42,7 @@
 
         input[type="text"],
         input[type="password"] {
-            width: 80%;
+            width: 25%;
             padding: 10px;
             margin: 5px 0 10px;
             border: 1px solid #ccc;
@@ -50,7 +50,7 @@
         }
 
         input[type="submit"] {
-            background-color: #4caf50;
+            background-color: #33CC99;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -60,7 +60,7 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: #33CC99;
         }
     </style>
 
@@ -69,22 +69,107 @@
 
 <body>
     <div class = "container">
-        <h2>로그인</h2>
-        <!-- action 주소 바꿔야함 -->
-        <form action="/login" method="post">
-            <label for="username">Username:</label>
-            <input type="text" name="username" required><br><br>
+        <h2>골목식당</h2>
+        <action 주소 바꿔야함 -->
+        <!-- <form action="/login" method="post">
+            <div class="columns is-right">
+                <div class="column is-half">
+                    <label for="username">Username:
+                        <input type="text" name="username" required><br><br>
+                    </label>
+                </div>
+            </div>
 
             <label for="password">Password:</label>
             <input type="password" name="password" required><br><br>
 
-            <input type="submit" value="로그인">
+            <input type="submit" value="백종원">
         </form>
 
         <form action="/register" method="post">
-            <input type="submit" value="회원가입">
+            <input type="submit" value="조보아">
         </form>
     </div>
+</body> -->
+
+<!-- </html> --> 
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 페이지</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<script>
+    alert("{{messages[-1]}}");
+</script>
+{% endif %}
+{% endwith %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration Page</title>
+</head>
+
+<body>
+
+    <section class="hero is-fullheight is-light">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-4-desktop is-6-tablet">
+                        <!-- 로고 -->
+                        <h3 class="title has-text-centered">로그인</h3>
+                        <div class="box">
+                            <!-- action 주소 바꿔야함 -->
+                            <form action="/login" method="post">
+                                <div class="field">
+                                    <label  class="label" for="username">Username:</label>
+                                    <div class="control">
+                                        <input class="input" type="text" name="username" required><br><br>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="control">
+                                        <label class="label" for="password">Password:</label>
+                                        <input class="input" type="password" name="password" required>
+                                    </div>
+
+                                </div>
+
+                                <div class="field">
+                                    <div class="control">
+                                        <input class="button is-primary is-fullwidth" type="submit" value="로그인"><br>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div class="field">
+                                <div class="control has-text-centered">
+                                    <form action="/register" method="post">
+                                        <input class="button is-link is-outlined is-fullwidth" type="submit"
+                                            value="회원가입">
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
+
+
 
 </html>

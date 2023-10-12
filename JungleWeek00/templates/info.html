@@ -78,8 +78,16 @@
                         <h3 class="title has-text-centered">맵</h3>
                         <div class="card">
                             <div class="card-image" style="position: relative;">
-                                <div class="image is-4by3 relative">
+                                <figure class="image is-4by3 relative">
                                     <img src="/static/map.jpg" alt="Placeholder image">
+                                    <div class="map-buttons">
+                                        <button class="map-btn" data-id="1" style="top:80%; left:8%;">1</button>
+                                        <button class="map-btn" data-id="2" style="top:55%; left:60%;">2</button>
+                                        <button class=" map-btn" data-id="3" style="top:35%; left:55%;">3</button>
+                                        <button class="map-btn" data-id="4" style="top:5%; left:50%;">4</button>
+                                        <button class="map-btn" data-id="5" style="top:20%; left:75%;">5</button>
+                                    </div>
+                                </figure>
                             </div>
                             <div class="card-content">
                                 <div class = "content">
@@ -100,6 +108,9 @@
                                         <button type = "button" class = "join-button">참여하기</button>
                                     </div>
                                 </div>
+                                <form action="/map" method="get">
+                                    <button type="submit">지도보기</button>
+                                </form>
                             </div>
                         </div>
                     </div>      
