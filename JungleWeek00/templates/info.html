@@ -1,0 +1,70 @@
+{%with messages = get_flashed_messages()%}
+{%if messages %}
+  <script type="text/javascript">
+    alert("{{messages[-1]}}");
+  </script>
+  {%endif%}
+{%endwith%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="/examples/media/example.js"></script> -->
+    <!-- <script>
+        function count(restaurant) {
+            alert("WOW")
+
+        }
+    </script> -->
+</head>
+
+<body>
+    <!-- newmap 에서 redirect 시 jinja 안됨 -->
+    <p>Number  {{dic1.number}}</p>
+    <p>식당이름 {{dic1.location_name}}</p>
+    <p>식당위치 {{dic1.location}}</p>
+    <p>현재인원 {{location_cnt}}</p>
+    <p>만남까지 남은시간
+    <h1 id="clock" style="color:black;">clock</h1>
+    </p>
+    <button type = "button" class = "join-button">참여하기</button>
+    <script>
+    document.querySelector('.join-button').addEventListener('click', function() {
+        var  locations_id= "{{dic1.number}}";
+        window.location.href = '/join/' + locations_id;
+        });   
+    
+    
+        
+        var Target = document.getElementById("clock");
+        function clock() {
+            var time = new Date();
+
+            var hours = time.getHours();
+            var minutes = time.getMinutes();
+            var seconds = time.getSeconds();
+
+            Target.innerText =
+                `${hours > 12 ? `${36 - hours}` : 11 - hours}:${59 - minutes}:${59 - seconds}`;
+
+        }
+        clock();
+        setInterval(clock, 1000); // 1초마다 실행
+
+
+    </script>
+
+    <!-- <<form action="/info" method="post">
+        {{dic1.name}}
+        <button type="submit">참여하기</button>
+    </form>  -->
+
+    <!-- <img src="x" alt="x"> -->
+
+</body>
+
+</html>

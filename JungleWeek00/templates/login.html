@@ -1,16 +1,35 @@
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<script>
+    alert("{{messages[-1]}}");
+</script>
+{% endif %}
+{% endwith %}
+
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Login</title>
+    <title>Registration Page</title>
 </head>
+
 <body>
-    <h1>Login</h1>
-    <form method="POST" action="/login">
+    <h2>로그인</h2>
+    <!-- action 주소 바꿔야함 -->
+    <form action="/login" method="post">
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br>
+        <input type="text" name="username" required><br><br>
+
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br>
-        <input type="submit" value="Login">
+        <input type="password" name="password" required><br><br>
+
+        <input type="submit" value="로그인">
     </form>
+
+    <form action="/register" method="post">
+        <input type="submit" value="회원가입">
+    </form>
+
 </body>
+
 </html>

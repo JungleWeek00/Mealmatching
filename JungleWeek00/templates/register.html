@@ -1,18 +1,33 @@
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<script>
+    alert("{{messages[-1]}}");
+</script>
+{% endif %}
+{% endwith %}
+
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Register</title>
+    <title>Registration Page</title>
 </head>
+
 <body>
-    <h1>Register</h1>
-    <form method="POST" action="/register">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br>
+    <h2>회원가입</h2>
+    <form action="/" method="post">
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br>
+        <input type="text" name="username" required><br><br>
+
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br>
-        <input type="submit" value="Register">
+        <input type="password" name="password" required><br><br>
+
+        <label for="number">Number:</label>
+        <input type="number" name="number" required><br><br>
+
+        <input type="submit" value="회원가입">
     </form>
+
 </body>
+
 </html>

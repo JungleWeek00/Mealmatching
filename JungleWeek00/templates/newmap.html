@@ -1,0 +1,79 @@
+<!-- {% with messages = get_flashed_messages() %}
+{% if messages %}
+<script>
+    alert(user['select_location'] + "{{messages[-1]}}");
+</script>
+{% endif %}
+{% endwith %} -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('/resource/map.jpg');
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        .one {
+            left: 10%;
+            top: 10%;
+        }
+
+        .image-button {
+            position: absolute;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .image-button:nth-child(1) { top: 20px; left: 20px; }
+        .image-button:nth-child(2) { top: 20px; left: 100px; }
+        .image-button:nth-child(3) { top: 20px; left: 180px; }
+        .image-button:nth-child(4) { top: 20px; left: 260px; }
+        .image-button:nth-child(5) { top: 20px; left: 340px; }
+    </style>
+</head>
+
+<body>
+    <div class="one">
+        <form method="GET" action="/info/1">
+           
+            <button type="submit" class="info-button">1</button>
+            
+        </form>
+        <form method="GET" action="/info/2">
+            <button type="submit" class="info-button">2</button>
+            
+        </form>
+        <form method="GET" action="/info/3">
+            <button type="submit" class="info-button">3</button>
+            
+        </form>
+        <form method="GET" action="/info/4">
+            <button type="submit" class="info-button">4</button>
+            
+        </form>
+        <form method="GET" action="/info/5">
+            <button type="submit" class="info-button">5</button>
+            
+        </form>
+
+        <!-- <p>
+            {{user['select_location']}}
+        </p> -->
+    </div>
+</body>
+
+</html>
