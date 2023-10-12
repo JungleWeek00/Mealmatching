@@ -6,6 +6,7 @@
   {%endif%}
 {%endwith%}
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,25 +14,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <script src="/examples/media/example.js"></script> -->
-    <!-- <script>
-        function count(restaurant) {
-            alert("WOW")
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    
+        
+    <style>
+        /* .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
-    </script> -->
+
+        .info-box {
+            background-color: #E5E5E5;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px;
+            text-align: center;
+        } */
+        .relative {
+            position: relative;
+        }
+
+        .map-buttons {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .map-btn {
+            position: absolute;
+            /* 추가 */
+            font-size:large;
+            background-color: rgb(111, 214, 26);
+            border: 2px solid rgb(3, 27, 9);
+            border-radius: 50%;
+            color: rgb(7, 32, 16);
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .map-btn.active {
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
 </head>
 
 <body>
-    <!-- newmap 에서 redirect 시 jinja 안됨 -->
-    <p>Number  {{dic1.number}}</p>
-    <p>식당이름 {{dic1.location_name}}</p>
-    <p>식당위치 {{dic1.location}}</p>
-    <p>현재인원 {{location_cnt}}</p>
-    <p>만남까지 남은시간
-    <h1 id="clock" style="color:black;">clock</h1>
-    </p>
-    <button type = "button" class = "join-button">참여하기</button>
+    <section class="hero is-fullheight is-light">
+        <div class="hero-body">
+            <section class="container">
+                <div class="columns is-centered">
+                    <div class="column is-4-desktop is-6-tablet">
+                        <!-- 로고 -->
+                        <h3 class="title has-text-centered">맵</h3>
+                        <div class="card">
+                            <div class="card-image" style="position: relative;">
+                                <div class="image is-4by3 relative">
+                                    <img src="/static/map.jpg" alt="Placeholder image">
+                            </div>
+                            <div class="card-content">
+                                <div class = "content">
+                                
+                                <!-- newmap 에서 redirect 시 jinja 안됨 -->
+                                    <p class="is-size-5"><span class="has-text-weight-bold">Number</span>  {{dic1.number}}</p>
+                                    <p class="is-size-5"><span class="has-text-weight-bold is-size-5">식당이름</span> {{dic1.location_name}}</p>
+                                    <p class="is-size-5"><span class="has-text-weight-bold is-size-5">식당위치</span> {{dic1.location}}</p>
+                                    <p class="is-size-5"><span class="has-text-weight-bold is-size-5">현재인원</span> {{location_cnt}}</p>
+                                    <div class="has-text-centered">
+                                    <p class="is-size-5"><span class="has-text-weight-bold is-size-5">만남까지 남은시간</span>
+                                        <h1 id="clock" style="color:black;">clock</h1>
+                                    </p>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="control">    
+                                        <button type = "button" class = "join-button">참여하기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>      
+                </div>
+            </div>
+        </section>
+    
     <script>
     document.querySelector('.join-button').addEventListener('click', function() {
         var  locations_id= "{{dic1.number}}";
@@ -57,13 +132,6 @@
 
 
     </script>
-
-    <!-- <<form action="/info" method="post">
-        {{dic1.name}}
-        <button type="submit">참여하기</button>
-    </form>  -->
-
-    <!-- <img src="x" alt="x"> -->
 
 </body>
 

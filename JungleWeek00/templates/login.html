@@ -11,25 +11,80 @@
 
 <head>
     <title>Registration Page</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 80%;
+            padding: 10px;
+            margin: 5px 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+
 </head>
 
 <body>
-    <h2>로그인</h2>
-    <!-- action 주소 바꿔야함 -->
-    <form action="/login" method="post">
-        <label for="username">Username:</label>
-        <input type="text" name="username" required><br><br>
+    <div class = "container">
+        <h2>로그인</h2>
+        <!-- action 주소 바꿔야함 -->
+        <form action="/login" method="post">
+            <label for="username">Username:</label>
+            <input type="text" name="username" required><br><br>
 
-        <label for="password">Password:</label>
-        <input type="password" name="password" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" required><br><br>
 
-        <input type="submit" value="로그인">
-    </form>
+            <input type="submit" value="로그인">
+        </form>
 
-    <form action="/register" method="post">
-        <input type="submit" value="회원가입">
-    </form>
-
+        <form action="/register" method="post">
+            <input type="submit" value="회원가입">
+        </form>
+    </div>
 </body>
 
 </html>
